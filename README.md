@@ -181,6 +181,9 @@ The project structure may change as development continues.
 
 Screenshots and gameplay footage will be added as development progresses.
 
+<img width="1917" height="1022" alt="image" src="https://github.com/user-attachments/assets/c74a6c58-62e6-42f6-bb16-b5cfa6c95e43" />
+
+
 ---
 
 ## 🧪 Development Status
