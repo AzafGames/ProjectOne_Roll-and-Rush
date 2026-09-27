@@ -32,7 +32,7 @@ The player controls a rolling sphere and must navigate through the game environm
 
 * [x] Basic Unity project setup
 * [x] Player sphere
-* [ ] Four-direction movement
+* [x] Four-direction movement
 * [ ] Rolling movement
 * [ ] Jumping
 * [ ] Player physics
@@ -117,8 +117,8 @@ The project structure may change as development continues.
 ### Phase 2 — Player System
 
 * [x] Create player sphere
-* [ ] Add Rigidbody
-* [ ] Implement movement
+* [x] Add Rigidbody
+* [x] Implement movement
 * [ ] Implement rolling
 * [ ] Implement jumping
 * [ ] Configure physics
