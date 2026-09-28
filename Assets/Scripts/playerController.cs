@@ -1,4 +1,5 @@
 
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ public class playerController : MonoBehaviour
     public float speed = 10.0f;
 
     public float jumpForce = 10.0f;
+    
 
     // Stores the player's movement input
     public InputAction moveInput;
@@ -19,7 +21,7 @@ public class playerController : MonoBehaviour
     public Vector2 moveAction;
 
     private Rigidbody rb;
-    public bool isGrounded = true;
+    private bool isGrounded = true;
 
     // Start is called once before the first frame
     void Start()
@@ -33,6 +35,9 @@ public class playerController : MonoBehaviour
     }
 
     // Update is called once every frame
+    
+    
+    
     void Update()
     {
         // Read the movement input from the player
@@ -40,6 +45,8 @@ public class playerController : MonoBehaviour
 
         // Create the movement direction
         Vector3 movement = new Vector3(moveAction.x, 0f, moveAction.y);
+
+       
 
         // Move the player
         transform.Translate(movement * speed * Time.deltaTime);
