@@ -34,7 +34,7 @@ The player controls a rolling sphere and must navigate through the game environm
 * [x] Player sphere
 * [x] Four-direction movement
 * [ ] Rolling movement
-* [ ] Jumping
+* [x] Jumping
 * [ ] Player physics
 * [ ] Collectible points
 * [ ] Score system
@@ -120,7 +120,7 @@ The project structure may change as development continues.
 * [x] Add Rigidbody
 * [x] Implement movement
 * [ ] Implement rolling
-* [ ] Implement jumping
+* [x] Implement jumping
 * [ ] Configure physics
 * [ ] Create player controller
 
