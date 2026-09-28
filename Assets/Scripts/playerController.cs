@@ -19,7 +19,7 @@ public class playerController : MonoBehaviour
     public Vector2 moveAction;
 
     private Rigidbody rb;
-    
+    public bool isGrounded = true;
 
     // Start is called once before the first frame
     void Start()
@@ -44,10 +44,16 @@ public class playerController : MonoBehaviour
         // Move the player
         transform.Translate(movement * speed * Time.deltaTime);
 
-        if (jumpInput.WasPressedThisFrame())
+        if (jumpInput.triggered && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isGrounded = true;
     }
 }
 
