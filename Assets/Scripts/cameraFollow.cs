@@ -9,7 +9,7 @@ public class cameraFollow : MonoBehaviour
     public GameObject playerObject;
 
     // Sets the camera's position relative to the player
-    public Vector3 offset = new Vector3(0, 5, -7);
+    private Vector3 offset = new Vector3(0, 5, -7);
 
     // Start is called once before the first frame
     void Start()

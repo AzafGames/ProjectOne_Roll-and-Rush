@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::cameraFollow
   playerObject: {fileID: 533242576}
-  offset: {x: 0, y: 5, z: -7}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerController
   speed: 10
+  jumpForce: 10
   moveInput:
     m_Name: Move Input
     m_Type: 0
@@ -600,6 +600,24 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Move Input
       m_Flags: 8
+    m_Flags: 0
+    m_Priority: 0
+  jumpInput:
+    m_Name: Jump Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 49fe1ef2-2ba5-4961-a0d6-0e5171cd4a0f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cdd3d765-53cf-439c-b1ba-564b2d92ec1c
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Input
+      m_Flags: 0
     m_Flags: 0
     m_Priority: 0
   moveAction: {x: 0, y: 0}
