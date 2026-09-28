@@ -1,65 +1,71 @@
 
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Controls the player's movement
+// Controls player movement
 public class playerController : MonoBehaviour
 {
-    // Controls how fast the player moves
+    // Player movement speed
     public float speed = 10.0f;
 
+    // Player jump strength
     public float jumpForce = 10.0f;
-    
 
-    // Stores the player's movement input
+    // Movement input
     public InputAction moveInput;
 
+    // Jump input
     public InputAction jumpInput;
 
-    // Stores the X and Y movement values
+    // Stores movement values
     public Vector2 moveAction;
 
+    // Player Rigidbody
     private Rigidbody rb;
+
+    // Checks if player is on ground
     private bool isGrounded = true;
 
-    // Start is called once before the first frame
+    // Runs at the start
     void Start()
     {
-        // Enable the movement input
+        // Enable movement input
         moveInput.Enable();
 
+        // Enable jump input
         jumpInput.Enable();
 
+        // Get Rigidbody component
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once every frame
-    
-    
-    
+    // Runs every frame
     void Update()
     {
-        // Read the movement input from the player
+        // Read movement input
         moveAction = moveInput.ReadValue<Vector2>();
 
-        // Create the movement direction
+        // Create movement direction
         Vector3 movement = new Vector3(moveAction.x, 0f, moveAction.y);
-
-       
 
         // Move the player
         transform.Translate(movement * speed * Time.deltaTime);
 
+        // Check for jump input
         if (jumpInput.triggered && isGrounded)
         {
+            // Apply jump force
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            // Player is now in the air
             isGrounded = false;
         }
     }
 
+    // Runs when player hits something
     private void OnCollisionEnter(Collision collision)
     {
+        // Player is on the ground
         isGrounded = true;
     }
 }
