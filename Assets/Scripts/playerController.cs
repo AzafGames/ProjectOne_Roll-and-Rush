@@ -27,11 +27,11 @@ public class playerController : MonoBehaviour
         // Read the movement input from the player
         moveAction = moveInput.ReadValue<Vector2>();
 
-        // Move the player forward and backward
-        transform.Translate(Vector3.forward * speed * Time.deltaTime * moveAction.y);
+        // Create the movement direction
+        Vector3 movement = new Vector3(moveAction.x, 0f, moveAction.y);
 
-        // Move the player left and right
-        transform.Translate(Vector3.right * speed * Time.deltaTime * moveAction.x);
+        // Move the player
+        transform.Translate(movement * speed * Time.deltaTime);
     }
 }
 
